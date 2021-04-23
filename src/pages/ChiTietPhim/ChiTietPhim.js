@@ -11,6 +11,8 @@ import { Link } from 'react-router-dom';
 import moment from 'moment';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
+import {WOW} from 'wowjs';
+// import {} from 'wow'
 export default function ChiTietPhim(props) {
     let maPhim = props.match.params.idFilm;
     // console.log(maPhim);
@@ -30,6 +32,18 @@ export default function ChiTietPhim(props) {
     })
 
     useEffect(() => {
+
+        const wow = new WOW(
+            { // default
+            offset:       100,          // default
+            mobile:       false,       // default
+            live:         true        // default
+          }
+          )
+          wow.init();
+
+
+
         Aos.init({duration:2000});
         chiTietPhimSer.LoadChiTietPhim(maPhim).then(res => {
             setChiTietPhim({ ...chiTietPhim, chiTiet: res.data });
@@ -155,7 +169,7 @@ export default function ChiTietPhim(props) {
         <div className='main-chi-tiet-film'>
             <div className='container-fluid bg1-chi-tiet-phim'>
                 <div className='row'>
-                    <div className='col-6'>
+                    <div className='col-6 wow animate__tada'  data-wow-duration="1s" data-wow-delay="0s">
                         <iFrame src={chiTietPhim.chiTiet.trailer} width="680" height="480" allowfullscreen></iFrame>
                     </div>
 

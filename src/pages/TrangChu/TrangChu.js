@@ -11,6 +11,7 @@ import ReactLoading from 'react-loading';
 import { useLoading, Audio } from '@agney/react-loading';
 import BackGround3D from '../BackGround3D/BackGround3D';
 import ChatBubble from 'react-chat-bubble';
+import ChonRap from '../../components/ChonRap/ChonRap';
 
 export default function TrangChu() {
 
@@ -47,6 +48,7 @@ export default function TrangChu() {
           <div style={{background:'black'}} className='main-trang-chu'>
             <Carousel1/>
             <BackGround3D/>
+            <ChonRap/>
             <TinTuc/>
             <Contact/>
             <Banner/>

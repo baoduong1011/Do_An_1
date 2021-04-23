@@ -53,6 +53,7 @@ export default function DatVe(props) {
                 button: "OK",
             })
             setTimeout(function() {
+                
                 props.history.push('/trangchu');
             },4000)
         })

@@ -9,7 +9,11 @@ const stateDefault = {
         danhGia: '',
         hinhAnh:{}
     },
-    maPhimTao:''
+    maPhimTao:'',
+    arrayMaRap:[],
+    maCumRap:'',
+    lstCumRap:[],
+    dsPhim:[]
 }
 
 const FilmReducer = (state = stateDefault , action) => {
@@ -35,6 +39,23 @@ const FilmReducer = (state = stateDefault , action) => {
             let newMaPhimTao = action.maPhim;
             state.maPhimTao = newMaPhimTao;
             return {...state}
+        }
+
+        case 'LIST_RAP' : {
+            return {...state,arrayMaRap: action.data,maCumRap: action.maCumRap}
+        }
+
+        case 'LST_HANDLE' : {
+            let lst = action.data;
+            let lstNew = [];
+            for(let key of lst) {
+                lstNew = key.lstCumRap;
+            }
+            return {...state,lstCumRap: lstNew}
+        }
+        
+        case 'DANH_SACH_PHIM' : {
+            return {...state,dsPhim: action.data};
         }
 
         default: return {...state}

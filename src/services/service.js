@@ -16,6 +16,7 @@ import ChinhSuaPhim from "./ChinhSuaPhim/ChinhSuaPhim";
 import TimKiem from './TimKiemNguoiDung/TimKiem';
 import LichSuDatVe from './LichSuDatVe/LichSuDatVe';
 import TaoLichChieu from "../pages/QuanLyHeThong/TaoLichChieu/TaoLichChieu";
+import LayLichChieuTheoRap from "./LayLichChieuTheoRap/LayLichChieuTheoRap";
 
 
 export const userLoginService = new UserLogin();
@@ -36,3 +37,4 @@ export const chinhSuaPhim = new ChinhSuaPhim();
 export const timKiem = new TimKiem();
 export const lichSuDatVe = new LichSuDatVe();
 export const taoLichChieu = new TaoLichChieu();
+export const layLichChieuTheoRap = new LayLichChieuTheoRap();

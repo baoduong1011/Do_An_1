@@ -8,6 +8,7 @@ import Contact from '../../components/contact/Contact';
 import Footer from '../../components/footer/Footer';
 import swal from 'sweetalert';
 import { Redirect } from 'react-router';
+import Axios from 'axios';
 export default function DangNhap(props) {
     const propsAnimtion1 = useSpring({
         opacity:1,
@@ -145,7 +146,6 @@ export default function DangNhap(props) {
                     </div>
                 </div>
             </div>
-
             <Contact/>
             <Footer/>
         </animated.div>

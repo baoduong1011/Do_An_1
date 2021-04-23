@@ -54,6 +54,8 @@
 
 .bg-3d-main img#moon {
     mix-blend-mode: screen;
+    margin-top: 10px;
+    height: 120%;
 }
 
 .bg-3d-main img#mountains_front {
@@ -93,4 +95,84 @@
 .bg-3d-main .sec p {
     font-size: 1em;
     color: #fff;
+}
+
+@media (max-width:1200px) {
+    .bg-3d-main section {
+        /* width: 80%; */
+        padding:350px 550px;
+    }
+}
+
+@media (max-width:1150px) {
+    .bg-3d-main section {
+        /* width: 80%; */
+        padding:300px 500px;
+    }
+    .bg-3d-main h2 {
+        font-size: 2em;
+    }
+}
+
+@media (max-width:1037px) {
+    .bg-3d-main section {
+        /* width: 80%; */
+        padding:250px 450px;
+    }
+    .bg-3d-main h2 {
+        font-size: 1.5em;
+    }
+}
+
+@media (max-width:903px) {
+    .bg-3d-main section {
+        /* width: 80%; */
+        padding:200px 400px;
+    }
+    .bg-3d-main h2 {
+        font-size: 0.5em;
+    }
+}
+
+@media (max-width:803px) {
+    .bg-3d-main section {
+        /* width: 80%; */
+        padding:200px 300px;
+    }
+    .bg-3d-main h2 {
+        font-size: 0.3em;
+    }
+}
+
+
+@media (max-width:703px) {
+    .bg-3d-main section {
+        /* width: 80%; */
+        padding:100px 200px;
+    }
+    .bg-3d-main h2 {
+        font-size: 0.2em;
+    }
+
+    .bg-3d-main img#moon {
+        mix-blend-mode: screen;
+        margin-top: 0px;
+        height: 160%;
+    }
+}
+
+@media (max-width:703px) {
+    .bg-3d-main section {
+        /* width: 80%; */
+        padding:100px 200px;
+    }
+    .bg-3d-main h2 {
+        font-size: 0.2em;
+    }
+
+    .bg-3d-main img#moon {
+        mix-blend-mode: screen;
+        margin-top: 0px;
+        height: 160%;
+    }
 }
