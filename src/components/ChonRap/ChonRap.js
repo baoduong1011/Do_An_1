@@ -5,7 +5,10 @@ import { layLichChieuTheoRap } from '../../services/service';
 import { useDispatch, useSelector } from 'react-redux';
 import lstCumRap from './lstCumRap';
 import moment from 'moment';
+import Aos from 'aos';
+import 'aos/dist/aos.css';
 import { Link } from 'react-router-dom';
+import {WOW} from 'wowjs';
 export default function ChonRap() {
 
 
@@ -53,7 +56,16 @@ export default function ChonRap() {
 
 
     useEffect(() => {
+        Aos.init({duration: 2000,offset: 300});
         layHeThongRap();
+        const wow = new WOW(
+            { // default
+            offset:       100,          // default
+            mobile:       false,       // default
+            live:         true        // default
+          }
+          )
+          wow.init();
     }, [])
 
     // console.log('dsRap',rap.)
@@ -74,7 +86,7 @@ export default function ChonRap() {
         return rap.heThongRap.map((r, index) => {
             if (index === 0) {
                 // setRap({ ...rap, activeMaRap: r.maHeThongRap});  
-                return <li style={{ padding: '0px' }} className='p-3 nav-item' key={index}>
+                return <li  style={{ padding: '0px' }} className='p-3 nav-item wow animate__tada' data-wow-duration="1s" data-wow-delay="0s" key={index}>
                     <div style={{ width: '50px', height: '50px', cursor: 'pointer' }} onClick={() => {
                         handleClick(r.maHeThongRap)
                     }} className="nav-link active" aria-current="page"><img src={r.logo} style={{ width: '50px', height: '50px', padding: '0px', margin: '0px' }} /></div>
