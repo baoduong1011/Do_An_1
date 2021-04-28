@@ -1,13 +1,13 @@
 
 
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;1,500;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;700&display=swap');
 
 
 
 
 .main-chi-tiet-film {
-    /* font-family: 'Poppins', sans-serif; */
+    font-family: 'Poppins', sans-serif;
 }
 
 .main-chi-tiet-film .bg1-chi-tiet-phim {
@@ -25,10 +25,11 @@
 }
 
 .main-chi-tiet-film .borderName .mo-ta-chi-tiet-phim {
-    border: 1px solid wheat;
+    /* border: 1px solid wheat; */
+    color: wheat;
     padding: 30px 0px;
-    border-radius: 40px 0 40px 0;
-    background:rgba(255, 115, 0, 0.632);
+    /* border-radius: 40px 0 40px 0; */
+    /* background:rgba(255, 115, 0, 0.632); */
 }
 
 
@@ -41,20 +42,20 @@
 }
 
 .main-chi-tiet-film .bg1-chi-tiet-phim .body-text .body-text-chi-tiet-phim h1{
-    margin-top: 10%;
+    /* margin-top: 10%;
     margin-left: -5%;
-    position: relative;
+    position: relative; */
     color: #252839;
-    -webkit-text-stroke: 0.5vw #383d52;
+    /* -webkit-text-stroke: 0.5vw #383d52; */
     /* text-transform: uppercase; */
     font-family: 'Karantina';
 }
 
 .main-chi-tiet-film .bg1-chi-tiet-phim .body-text .body-text-chi-tiet-phim h1 {
     content: attr(data-text);
-    position: absolute;
+    /* position: absolute;
     top: 0;
-    left: 10%;
+    left: 10%; */
     width: 100%;
     height: 100%;
     color: wheat;
@@ -67,9 +68,9 @@
 }
 
 .main-chi-tiet-film .mo-ta-chi-tiet-phim {
-    margin-top: 35%;
+    /* margin-top: 35%;
     margin-left: 20%;
-    color: wheat;
+    color: wheat; */
 
 }
 .main-chi-tiet-film i {
@@ -125,7 +126,18 @@
     
 }
 
-.main-chi-tiet-film .bg2-main-chi-tiet-phim .quan-ly-rap .thong-tin-dat-ve .col {
+.main-chi-tiet-film .borderName {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-chi-tiet-film .bg2-video video {
+    width: 100%;
+    height: 40%;
+}
+
+.main-chi-tiet-film .bg2-main-chi-tiet-phim .quan-ly-rap .thong-tin-dat-ve .col-xl-4 {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -135,12 +147,59 @@
     transition: all 0.5s;
 }
 
-.main-chi-tiet-film .bg2-main-chi-tiet-phim .quan-ly-rap .thong-tin-dat-ve .col i { 
+.main-chi-tiet-film .bg2-main-chi-tiet-phim .quan-ly-rap .thong-tin-dat-ve .col-xl-4 i { 
     padding:10px 30px;
 
 }
 
-.main-chi-tiet-film .bg2-main-chi-tiet-phim .quan-ly-rap .thong-tin-dat-ve .col:hover {
+.main-chi-tiet-film .bg2-main-chi-tiet-phim .quan-ly-rap .thong-tin-dat-ve .col-xl-4:hover {
     background: rgba(245, 222, 179, 0.496);
     color: black;
+}
+@media (max-width:992px) {
+    .main-chi-tiet-film .thong-tin-dat-ve {
+        display: none;
+        visibility: hidden;
+    }
+}
+
+.bg2-main-chi-tiet-phim select {
+    width: 100%;
+    margin: 10px;
+    border-radius: 40px;
+}
+
+.bg2-main-chi-tiet-phim .btnDatVe {
+    padding: 20px 0;
+    background: rgb(255, 68, 0);
+    border: none;
+    border-radius: 40px;
+    transition: 0.5s;
+}
+
+.bg2-main-chi-tiet-phim .btnDatVe:hover {
+    background: rgba(255, 68, 0, 0.659);
+}
+
+@media (max-width:768px) {
+
+    .bg2-main-chi-tiet-phim h1{
+        font-size: 20px;
+        padding: 0;
+        margin: 0;
+    }
+
+    .bg2-main-chi-tiet-phim video {
+        /* height: 80%; */
+    }
+    .bg2-main-chi-tiet-phim select {
+        padding: 5px 10px;
+        height: 20px;
+        height: 40px;
+        width: 80%;
+    }
+
+    .bg2-main-chi-tiet-phim .btnDatVe {
+        width: 60%;
+    }
 }

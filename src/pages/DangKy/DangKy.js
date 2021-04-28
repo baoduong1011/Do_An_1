@@ -6,6 +6,7 @@ import { userRegisterService } from '../../services/service';
 import Contact from '../../components/contact/Contact';
 import Footer from '../../components/footer/Footer';
 import swal from 'sweetalert';
+import Loader from '../../components/loader/Loader';
 export default function DangKy() {
 
    
@@ -119,7 +120,8 @@ export default function DangKy() {
         })
       }
     return (
-        <animated.div style={propsAnimtion1}>
+        <animated.div>
+            <Loader/>
             <div className='body-dang-ky-web'>
             <div className='main-dang-ky-web'>
                 <div className='dang-ky-container'>

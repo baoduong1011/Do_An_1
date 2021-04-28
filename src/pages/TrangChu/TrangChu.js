@@ -12,6 +12,7 @@ import { useLoading, Audio } from '@agney/react-loading';
 import BackGround3D from '../BackGround3D/BackGround3D';
 import ChatBubble from 'react-chat-bubble';
 import ChonRap from '../../components/ChonRap/ChonRap';
+import Loader from '../../components/loader/Loader';
 
 export default function TrangChu() {
 
@@ -44,7 +45,8 @@ export default function TrangChu() {
           Example(String,String);
       },[])
     return (
-       <animated.div style={propsAnimtion1}>
+       <animated.div>
+           <Loader/>
           <div style={{background:'black'}} className='main-trang-chu'>
             <Carousel1/>
             <BackGround3D/>

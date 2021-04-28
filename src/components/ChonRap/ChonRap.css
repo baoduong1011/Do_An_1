@@ -22,3 +22,30 @@
     background-size: cover;
     background-repeat: no-repeat;
 }
+
+.chon-rap-main .diaChi {
+    /* background: rgba(255, 166, 0, 0.571); */
+    transition: all 0.5s;
+}
+
+.chon-rap-main .diaChi:hover {
+    background: rgba(255, 166, 0, 0.571);
+}
+
+/* .chon-rap-main  */
+
+.chon-rap-main h4 {
+    color: orangered;
+}
+
+.chon-rap-main .lich-chieu {
+    transition: all 0.5s;
+}
+
+.chon-rap-main .lich-chieu:hover {
+    background: rgba(238, 238, 238, 0.571);
+}
+
+.chon-rap-main .active:active {
+    display: inline;
+}

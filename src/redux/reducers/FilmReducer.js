@@ -11,7 +11,7 @@ const stateDefault = {
     },
     maPhimTao:'',
     arrayMaRap:[],
-    maCumRap:'',
+    maCumRap:'BHDStar',
     lstCumRap:[],
     dsPhim:[]
 }
@@ -43,6 +43,7 @@ const FilmReducer = (state = stateDefault , action) => {
 
         case 'LIST_RAP' : {
             return {...state,arrayMaRap: action.data,maCumRap: action.maCumRap}
+            // return {...state,arrayMaRap: action.rap.danhSachRap,maCumRap:action.rap.maCumRap}
         }
 
         case 'LST_HANDLE' : {

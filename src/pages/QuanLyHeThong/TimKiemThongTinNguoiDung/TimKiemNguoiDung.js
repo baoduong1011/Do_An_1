@@ -69,7 +69,7 @@ export default function TimKiemNguoiDung() {
 
 
     return (
-        <div className='tim-kiem-nguoi-dung-main'>
+        <div style={{height:'100%',backgroundColor:'black'}} className='tim-kiem-nguoi-dung-main'>
             <h3 className='text-center text-light pt-4'>TÌM KIẾM NGƯỜI DÙNG</h3>
             <div className='search-box'>
                 <input onChange={handleChange} className='search-txt' type='text' name='taiKhoan' placeholder="Nhập tên người dùng..." />

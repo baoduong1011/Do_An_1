@@ -12,6 +12,7 @@ import moment from 'moment';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
 import {WOW} from 'wowjs';
+import Loader from '../../components/loader/Loader';
 // import {} from 'wow'
 export default function ChiTietPhim(props) {
     let maPhim = props.match.params.idFilm;
@@ -167,38 +168,40 @@ export default function ChiTietPhim(props) {
     let logo = useSelector(state => state.DatVeReducer.logo);
     return (
         <div className='main-chi-tiet-film'>
+            <Loader/>
             <div className='container-fluid bg1-chi-tiet-phim'>
                 <div className='row'>
-                    <div className='col-6 wow animate__tada'  data-wow-duration="1s" data-wow-delay="0s">
+                    <div className='col-12 col-xl-12 text-center wow animate__tada'  data-wow-duration="1s" data-wow-delay="0s">
                         <iFrame src={chiTietPhim.chiTiet.trailer} width="680" height="480" allowfullscreen></iFrame>
                     </div>
 
-                    <div className='col-6 body-text'>
+                    <div className='col-12 col-xl-12 body-text'>
                         <div className='body-text-chi-tiet-phim'>
                             <h1 data-text={chiTietPhim.chiTiet.tenPhim} className='text-center'> <i class="fa fa-film"></i> {chiTietPhim.chiTiet.tenPhim}</h1>
                         </div>
                         <div className='borderName'>
-                        <div className='mo-ta-chi-tiet-phim'>
-                            <h4 className='text-center'>{chiTietPhim.chiTiet.ngayKhoiChieu} </h4>
-                            <h5 className='text-center'>Mô tả: {chiTietPhim.chiTiet.moTa}</h5>
-                            <div style={{ marginLeft: '0%' }} className='text-warning text-center'>
-                            <div>
-                                <i className="fa fa-star" />
-                                <i className="fa fa-star" />
-                                <i className="fa fa-star" />
-                                <i className="fa fa-star" />
-                                <i className="fa fa-star" />
+                            <div className='mo-ta-chi-tiet-phim text-center'>
+                                <h4  data-wow-duration="1s" data-wow-delay="0s" className='wow animate__wobble text-center'> <i class="fa fa-calendar-alt"></i> Ngày chiếu: {moment(chiTietPhim.chiTiet.ngayKhoiChieu).format('DD-MM-YYYY')} </h4>
+
+                                
+                                <h5 data-wow-duration="1s" data-wow-delay="0s" className='text-center wow animate__wobble'>Mô tả: {chiTietPhim.chiTiet.moTa}</h5>
+                                    <div style={{ marginLeft: '0%' }} className='text-warning text-center'>
+                                        <div>
+                                            <i className="fa fa-star" />
+                                            <i className="fa fa-star" />
+                                            <i className="fa fa-star" />
+                                            <i className="fa fa-star" />
+                                            <i className="fa fa-star" />
+                                        </div>
+                                    </div>
                             </div>
-                        </div>
-                        </div>
-                       
                         </div>
                     </div>
                 </div>
             </div>
             <div className='bg2-main-chi-tiet-phim'>
                 <div className='bg2-video'>
-                    <video width='100%' height='40%' autoPlay muted loop>
+                    <video  autoPlay muted loop>
                         <source src={Video1} type="video/mp4" />
                     </video>
                     <div className='quan-ly-rap'>
@@ -209,48 +212,48 @@ export default function ChiTietPhim(props) {
                         <div className='selectAction'>
                             <div className='container'>
                                 <div className='row'>
-                                    <div data-aos="fade-up" className='col'>
-                                        <select onChange={onnChange1}>
+                                    <div data-aos="fade-up" className='text-center col-12 col-md-6 col-lg-3'>
+                                        <select className='text-center' onChange={onnChange1}>
                                             {renderChange1()}
                                         </select>
                                     </div>
 
-                                    <div data-aos="fade-up" className='col'>
-                                        <select onChange={handleChange2}>
+                                    <div data-aos="fade-up" className='text-center col-12 col-md-6 col-lg-3'>
+                                        <select className='text-center' onChange={handleChange2}>
                                             {renderChange2()}
                                         </select>
                                     </div>
 
-                                    <div data-aos="fade-up" className='col'>
-                                        <select onChange={handleChange3}>
+                                    <div data-aos="fade-up" className='text-center col-12 col-md-6 col-lg-3'>
+                                        <select className='text-center' onChange={handleChange3}>
                                             {renderChange3()}
                                         </select>
                                     </div>
-                                    <div className='col'>
-                                        <Link to={`/datve/${chiTietPhim.maLichChieu}`}  onClick={() => {
+                                    <div className='text-center col-12 col-md-6 col-lg-3'>
+                                        <Link style={{width:'100%'}} to={`/datve/${chiTietPhim.maLichChieu}`}  onClick={() => {
                                             dispatch({
                                                 type: 'DAT_VE_REDUCER',
                                                 maLichChieu: chiTietPhim.maLichChieu,
                                                 maCumRap: chiTietPhim.maCumRap,
                                                 maHeThongRap: chiTietPhim.maHeThongRap
                                             })
-                                        }} className='btn btn-success'>Đặt vé</Link>
+                                        }} className='btn btn-success btnDatVe text-center'>Đặt vé</Link>
                                     </div>
                                 </div>
 
                                 <div className='thong-tin-dat-ve'>
                                    <div className='container'>
                                         <div data-aos="flip-down" className='row'>
-                                            <div className='col'>
+                                            <div className='col-lg-12 col-xl-4'>
                                             <i class="fab fa-android"></i>
                                              Film Studio rất vui vì được đón tiếp quý vị. Là web được kết nối với tất cả các rạp nổi tiếng với nhiều bọ phim ra mắt hấp dẫn bom tấn nhất thời đại.
                                             </div>
 
-                                            <div className='col'>
+                                            <div className='col-lg-12 col-xl-4'>
                                             <i class="fa fa-code"></i> Đây là đồ án được thực hiện bở hai sinh viên UIT đến từ khoa Mạng Máy Tính và Truyền thông
                                             </div>
 
-                                            <div className='col'>
+                                            <div className=' col-lg-12 col-xl-4'>
                                             <i class="fa fa-people-carry"></i> Dương Tuấn Bảo và Nguyễn Lê Hy hiện đang là sinh viên năm 2 của ngành An Toàn Thông Tin
                                             </div>
                                         </div>

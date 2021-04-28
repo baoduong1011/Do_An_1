@@ -6,6 +6,7 @@ import './KhuyenMai.css';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
 import { duration } from 'moment';
+import Loader from '../../components/loader/Loader';
 export default function KhuyenMai() {
 
 
@@ -18,6 +19,7 @@ export default function KhuyenMai() {
     const [props, set, stop] = useSpring(() => ({ xys: [0, 0, 1], config: { mass: 5, tension: 350, friction: 40 } }))
     return (
         <div className='khuyen-mai-main'>
+            <Loader/>
             <div className='khuyen-mai'>
                 <div className='container-fluid'>
                     <div className='row body'>

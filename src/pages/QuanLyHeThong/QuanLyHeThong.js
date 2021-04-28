@@ -1,6 +1,7 @@
 import { animated, useSpring } from '@react-spring/web';
 import React from 'react'
 import { BrowserRouter, Link, NavLink, Redirect, Route, Router, Switch } from 'react-router-dom'
+import Loader from '../../components/loader/Loader';
 import './css/QuanLyHeThong.css';
 import LichSuDatVe from './LichSuDatVe/LichSuDatVe';
 import QuanLyFilm from './QuanLyFilm/QuanLyFilm';
@@ -24,8 +25,9 @@ export default function QuanLyHeThong() {
 
       if( localStorage.getItem('taiKhoan') && maLoaiNguoiDung === "QuanTri") {
         return (
-            <animated.div  style={propsAnimtion1} className='quan-ly-he-thong-main'>
-              <div className='container-fluid'>
+            <animated.div  className='quan-ly-he-thong-main'>
+                <Loader/>
+              <div style={{height:'600px',backgroundColor:'black'}} className='container-fluid'>
                     <div className='row'>
                     <BrowserRouter>
                         <div className='col-2'>

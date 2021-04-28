@@ -9,6 +9,7 @@ import './css/DatVe.css';
 import swal from 'sweetalert';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
+import Loader from '../../components/loader/Loader';
 export default function DatVe(props) {
     
     const startMinutes = 5;
@@ -99,6 +100,7 @@ export default function DatVe(props) {
    if(localStorage.getItem('taiKhoan')) {
     return (
         <div className='dat-ve-main text-light'>
+            <Loader/>
             <div className='container-fluid'>
                 <div className='row'>
                     <div className='col-8 text-center'>
@@ -182,6 +184,7 @@ export default function DatVe(props) {
                             // })
 
                             DatVe(objectDatVe);
+                            // setFilm({...})
                         }} className='btn btn-success w-100 p-5' style={{fontSize:'25px'}}>ĐẶT VÉ</button>
                     </div>
                 </div>

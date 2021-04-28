@@ -9,6 +9,7 @@ import Footer from '../../components/footer/Footer';
 import swal from 'sweetalert';
 import { Redirect } from 'react-router';
 import Axios from 'axios';
+import Loader from '../../components/loader/Loader';
 export default function DangNhap(props) {
     const propsAnimtion1 = useSpring({
         opacity:1,
@@ -109,7 +110,8 @@ export default function DangNhap(props) {
     }
     
     else return (
-        <animated.div style={propsAnimtion1}>
+        <animated.div>
+            <Loader/>
             <div className='main-dang-nhap-web'>
                 <div className='dang-nhap-container'>
                     <h2>ĐĂNG NHẬP</h2>

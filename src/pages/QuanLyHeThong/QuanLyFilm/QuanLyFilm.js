@@ -6,6 +6,7 @@ import { chinhSuaPhim, danhSachPhim, taoLichChieu, xoaPhim } from '../../../serv
 import { useDispatch, useSelector } from 'react-redux';
 import TaoLichChieu from '../TaoLichChieu/TaoLichChieu';
 import swal from 'sweetalert';
+import Loader from '../../../components/loader/Loader';
 export default function QuanLyFilm() {
     let maLoaiNguoiDung = localStorage.getItem('maLoaiNguoiDung');
 
@@ -307,6 +308,7 @@ export default function QuanLyFilm() {
     if (localStorage.getItem('taiKhoan') && maLoaiNguoiDung === "QuanTri") {
         return (
             <div className='body-quan-ly-film'>
+                {/* <Loader/> */}
                 <div className='main-quan-ly-film'>
                     <div className='quan-ly-film-container'>
                         <h2>QUẢN LÝ PHIM</h2>

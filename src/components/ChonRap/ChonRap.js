@@ -14,13 +14,28 @@ export default function ChonRap() {
 
     const [rap, setRap] = useState({
         heThongRap: [],
-        activeMaRap: '',
+        activeMaRap:'',
         danhSachRap:[],
         danhSachMaRap:[],
         maDiaChi:'',
         maRap:'',
-        danhSachPhim:[]
+        danhSachPhim:[],
+        arrayBHD:[],
+        flag:false
     })
+
+    // let ActiveDiaChi1 = () => {
+    //     let promise = Axios({
+    //         url:'https://movie0706.cybersoft.edu.vn/api/QuanLyRap/LayThongTinCumRapTheoHeThong?maHeThongRap=BHDStar',
+    //         method:'GET'
+    //     })
+    //     promise.then(res => {
+    //         setRap({...rap,arrayBHD: res.data});
+    //     })
+    //     promise.catch(err => {
+    //         console.log(err.response.data);
+    //     })
+    // }
 
     let layHeThongRap = () => {
         let promise = Axios({
@@ -29,7 +44,7 @@ export default function ChonRap() {
         })
 
         promise.then(res => {
-            setRap({ ...rap, heThongRap: res.data });
+            setRap({ ...rap, heThongRap: res.data,activeMaRap:'BHDStar',maRap:'BHDStar'});
         })
 
         promise.catch(err => {
@@ -66,7 +81,11 @@ export default function ChonRap() {
           }
           )
           wow.init();
+
+         
+         
     }, [])
+
 
     // console.log('dsRap',rap.)
 
@@ -75,7 +94,7 @@ export default function ChonRap() {
         layThongTinRap(rap.activeMaRap);
     }, [rap.activeMaRap])
 
-
+    
 
 
     let handleClick = (maHeThongRap) => {
@@ -86,15 +105,15 @@ export default function ChonRap() {
         return rap.heThongRap.map((r, index) => {
             if (index === 0) {
                 // setRap({ ...rap, activeMaRap: r.maHeThongRap});  
-                return <li  style={{ padding: '0px' }} className='p-3 nav-item wow animate__tada' data-wow-duration="1s" data-wow-delay="0s" key={index}>
+                return <active  style={{ padding: '0px' }} className='p-3 nav-item active'  key={index}>
                     <div style={{ width: '50px', height: '50px', cursor: 'pointer' }} onClick={() => {
-                        handleClick(r.maHeThongRap)
+                        setRap({ ...rap, activeMaRap: r.maHeThongRap});
                     }} className="nav-link active" aria-current="page"><img src={r.logo} style={{ width: '50px', height: '50px', padding: '0px', margin: '0px' }} /></div>
-                </li>
+                </active>
             }
             else {
-                return <li className='p-3 nav-item' key={index}>
-                    <div style={{ width: '50px', height: '50px', cursor: 'pointer' }} onClick={() => {
+                return <li className='p-3 nav-item active' key={index}>
+                    <div className='active' style={{ width: '50px', height: '50px', cursor: 'pointer' }} onClick={() => {
                         handleClick(r.maHeThongRap)
                     }} className="nav-link" aria-current="page"><img src={r.logo} style={{ width: '50px', height: '50px' }} /></div>
                 </li>
@@ -104,17 +123,30 @@ export default function ChonRap() {
 
     let dispatch = useDispatch();
 
+    let autoDispatch = (rapData) => {
+        dispatch({
+            type:'LIST_RAP',
+            rap:rapData
+        })
+    }
+
+    // useEffect(() => {
+    //     autoDispatch();
+    // },[])
+
     let renderDanhSachDiaChiRap = () => {
         return rap.danhSachRap.map((rap,index) => {
-            return <li className='p-1 nav-item' key={index}>
+            return <li data-wow-duration="1s" data-wow-delay="0s" className='p-1 nav-item diaChi wow animate__zoomInUp active' key={index}>
                 <div onClick={() => {
+                    // setRap({...rap,flag:true})
                     // setRap({...rap,danhSachMaRap: rap.danhSachRap})
+                    // autoDispatch(rap);
                     dispatch({
                         type:'LIST_RAP',
                         data: rap.danhSachRap,
                         maCumRap: rap.maCumRap
                     })
-                }} className='nav-link' style={{cursor:'pointer'}}>
+                }} className='nav-link active' style={{cursor:'pointer'}}>
                     <h4>{rap.tenCumRap}</h4>
                     <p>{rap.diaChi}</p>
                 </div>
@@ -190,7 +222,7 @@ export default function ChonRap() {
    console.log(dsPhim);
    let renderLichChieu = () => {
        return dsPhim.map((phim,index) => {
-           return <div className='col-12 p-4' key={index}>
+           return <div className='col-12 p-4 lich-chieu' key={index}>
                <div className='row'>
                     <div className='col-3'>
                     <img  src={phim.hinhAnh} style={{width:'100px',height:'100px',borderRadius:'0 30px 0 30px'}} />   
@@ -227,23 +259,27 @@ export default function ChonRap() {
     return (
         <div className='chon-rap-main text-light'>
             <div className='container'>
-                <h2 className='text-center text-warning p-5' >FILM STUDIO</h2>
+                <h1 className='text-center text-warning p-5' >CỤM RẠP</h1>
                 <div className='row'>
-                    <div className='col-1'>
+                    <div className='col-5 col-md-1 col-xl-1'>
                         <div className='rap-phim'>
-                            <ul className="navbar-nav cumRap">
+                            <h4 className='text-center p-3'>RẠP</h4>
+                            <ul data-aos="slide-up" className="navbar-nav cumRap">
                                 {renderHethongRap()}
                             </ul>
                         </div>
                     </div>
-                    <div className='col-5'>
-                        <ul className='diaChiRap navbar-nav'>
+                    <div className='col-7 col-md-3 col-xl-5'>
+                    <h4 className='text-center p-3'>ĐỊA CHỈ</h4>
+                        <ul data-aos="slide-up" className='diaChiRap navbar-nav'>
                             {renderDanhSachDiaChiRap()}
                         </ul>
                     </div>
                     
-                    <div className='col-6'>
-                        <div className='row lichChieu'>
+                    <div className='col-12 col-md-8 col-xl-6'>
+                    <h4 className='text-center p-3'>LỊCH CHIẾU</h4>
+                        <div data-aos="slide-up" className='row lichChieu'>
+                            {/* {rap.flag ? "" : <h3>Hãy chọn địa điểm chiếu</h3>} */}
                             {renderLichChieu()}
                         </div>
                     </div>
