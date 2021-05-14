@@ -61,7 +61,7 @@ export default function Carousel1() {
     }
 
     return (
-        <div className='main-carousel1'>
+        <div className='main-carousel1 text-center'>
             <div className='video-background-carousel1'>
                 <video width='100%' height='100%' autoPlay muted loop>
                     <source src={Video1} type="video/mp4" />
@@ -69,24 +69,22 @@ export default function Carousel1() {
                 <div className='body-carousel1 text-center'>
                     <h1 style={{padding:'60px 0px'}} className='text-warning'>PHIM HOT THÁNG NÀY</h1>
                     <div className='responsiveTemp1'>
-                    <div className='container'>
-                        <Slider {...settings}>
+                    <div className='container text-center'>
+                        <Slider className='text-center' {...settings}>
                             {renderDanhSachPhim()}
                         </Slider>
                     </div>
                     </div>
 
                     <div className='responsiveTemp2'>
-                        <div className='container'>
-                            <Slider {...settings2} >
+                        <div className='container text-center'>
+                            <Slider className='text-center' {...settings2} >
                                 {renderDanhSachPhim()}
                             </Slider>
                         </div>
                     </div>
                 </div>
             </div>
-
-           
         </div>
     )
 }

@@ -7,6 +7,7 @@ import Aos from 'aos';
 import 'aos/dist/aos.css';
 import { duration } from 'moment';
 import Loader from '../../components/loader/Loader';
+import CarouselKhuyenMai from './CarouselKhuyenMai';
 export default function KhuyenMai() {
 
 
@@ -20,6 +21,7 @@ export default function KhuyenMai() {
     return (
         <div className='khuyen-mai-main'>
             <Loader/>
+            <CarouselKhuyenMai/>
             <div className='khuyen-mai'>
                 <div className='container-fluid'>
                     <div className='row body'>
@@ -93,6 +95,7 @@ export default function KhuyenMai() {
                     </div>
                 </div>
             </div>
+            
             <Contact />
             <Footer />
         </div>

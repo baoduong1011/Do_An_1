@@ -27,7 +27,7 @@ export default function QuanLyHeThong() {
         return (
             <animated.div  className='quan-ly-he-thong-main'>
                 <Loader/>
-              <div style={{height:'600px',backgroundColor:'black'}} className='container-fluid'>
+              <div style={{height:'100%',backgroundColor:'black'}} className='container-fluid'>
                     <div className='row'>
                     <BrowserRouter>
                         <div className='col-2'>

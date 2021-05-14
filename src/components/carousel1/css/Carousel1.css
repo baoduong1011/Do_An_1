@@ -98,6 +98,16 @@
         height: 200px;
         border-radius: 0 60px 0 60px;
     }
+    .main-carousel1 .body-carousel1 {
+        margin-left: 7%;
+    }
+}
+
+@media (max-width:1500px) {
+    .main-carousel1 .body-carousel1 {
+        margin-left: 8%;
+    }
+    
 }
 
 @media (max-width:768px) {
@@ -137,5 +147,19 @@
         height: 40px;
         font-size: 10px;
     }
+
+    .main-carousel1 .body-carousel1 {
+        margin-left: 0%;
+    }
     
+}
+
+.main-carousel1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-carousel1 .body-carousel1 {
+    margin-left: 7%;
 }

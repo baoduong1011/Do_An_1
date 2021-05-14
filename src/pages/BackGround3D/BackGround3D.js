@@ -12,7 +12,7 @@ export default function BackGround3D() {
        <div  className='body-bg'>
             <div className='bg-3d-main'>
             <section>
-                <img data-aos="fade-up"  src="./img/stars.png" id="stars" />
+                <img src="./img/stars.png" id="stars" data-aos="zoom-in-up" />
                 <img data-aos="slide-up" src="./img/moon.png" id="moon" />
                 <img data-aos="slide-left" src="./img/mountains_behind.png" id="mountains_behind" />
                 <h2 className='text-center' data-aos="zoom-in-up" id='textBg'> <i class="fab fa-first-order"></i> Studio Film</h2>
